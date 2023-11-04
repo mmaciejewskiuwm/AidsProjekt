@@ -79,6 +79,7 @@
             btSS.TabIndex = 3;
             btSS.Text = "Selection  Sort";
             btSS.UseVisualStyleBackColor = true;
+            btSS.Click += btSS_Click;
             // 
             // btSI
             // 
@@ -88,6 +89,7 @@
             btSI.TabIndex = 4;
             btSI.Text = "Insert  Sort";
             btSI.UseVisualStyleBackColor = true;
+            btSI.Click += btSI_Click;
             // 
             // btSM
             // 
@@ -97,6 +99,7 @@
             btSM.TabIndex = 5;
             btSM.Text = "Merge Sort";
             btSM.UseVisualStyleBackColor = true;
+            btSM.Click += btSM_Click;
             // 
             // btSQ
             // 
@@ -106,6 +109,7 @@
             btSQ.TabIndex = 6;
             btSQ.Text = "Quick Sort";
             btSQ.UseVisualStyleBackColor = true;
+            btSQ.Click += btSQ_Click;
             // 
             // chbPrzelacz
             // 

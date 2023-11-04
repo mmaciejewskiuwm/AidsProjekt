@@ -65,6 +65,24 @@ namespace AidsProjekt
             return tab;
 
         }
+        int[] SelectionSort(int[] tab)
+        {
+            int k;
+            for (int i = 0; i < tab.Length; i++)
+            {
+                k = i;
+                for (int j = i + 1; j < tab.Length; j++)
+                {
+                    if (tab[j] < tab[k])
+                    {
+                        int temp = tab[j];
+                        tab[j] = tab[k];
+                        tab[k] = temp;
+                    }
+                }
+            }
+            return tab;
+        }
 
         private void tbxWynik_TextChanged(object sender, EventArgs e)
         {
@@ -72,6 +90,26 @@ namespace AidsProjekt
         }
 
         private void lbCzas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btSS_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btSI_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btSM_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btSQ_Click(object sender, EventArgs e)
         {
 
         }
