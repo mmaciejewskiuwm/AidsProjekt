@@ -67,7 +67,7 @@
             btSB.Name = "btSB";
             btSB.Size = new Size(75, 47);
             btSB.TabIndex = 2;
-            btSB.Text = "button1";
+            btSB.Text = "Bubble Sort";
             btSB.UseVisualStyleBackColor = true;
             btSB.Click += btSB_Click;
             // 
@@ -77,7 +77,7 @@
             btSS.Name = "btSS";
             btSS.Size = new Size(75, 47);
             btSS.TabIndex = 3;
-            btSS.Text = "button2";
+            btSS.Text = "Selection  Sort";
             btSS.UseVisualStyleBackColor = true;
             // 
             // btSI
@@ -86,7 +86,7 @@
             btSI.Name = "btSI";
             btSI.Size = new Size(75, 47);
             btSI.TabIndex = 4;
-            btSI.Text = "button3";
+            btSI.Text = "Insert  Sort";
             btSI.UseVisualStyleBackColor = true;
             // 
             // btSM
@@ -95,7 +95,7 @@
             btSM.Name = "btSM";
             btSM.Size = new Size(75, 47);
             btSM.TabIndex = 5;
-            btSM.Text = "button4";
+            btSM.Text = "Merge Sort";
             btSM.UseVisualStyleBackColor = true;
             // 
             // btSQ
@@ -104,7 +104,7 @@
             btSQ.Name = "btSQ";
             btSQ.Size = new Size(75, 47);
             btSQ.TabIndex = 6;
-            btSQ.Text = "button5";
+            btSQ.Text = "Quick Sort";
             btSQ.UseVisualStyleBackColor = true;
             // 
             // chbPrzelacz
@@ -112,9 +112,9 @@
             chbPrzelacz.AutoSize = true;
             chbPrzelacz.Location = new Point(351, 62);
             chbPrzelacz.Name = "chbPrzelacz";
-            chbPrzelacz.Size = new Size(83, 19);
+            chbPrzelacz.Size = new Size(109, 19);
             chbPrzelacz.TabIndex = 7;
-            chbPrzelacz.Text = "checkBox1";
+            chbPrzelacz.Text = "Aktualna strona";
             chbPrzelacz.UseVisualStyleBackColor = true;
             // 
             // nudDlugosc
@@ -130,26 +130,27 @@
             btGen.Name = "btGen";
             btGen.Size = new Size(116, 43);
             btGen.TabIndex = 9;
-            btGen.Text = "button1";
+            btGen.Text = "Generuj!";
             btGen.UseVisualStyleBackColor = true;
             // 
             // lbNapis
             // 
             lbNapis.AutoSize = true;
-            lbNapis.Location = new Point(496, 196);
+            lbNapis.Location = new Point(485, 196);
             lbNapis.Name = "lbNapis";
-            lbNapis.Size = new Size(38, 15);
+            lbNapis.Size = new Size(94, 15);
             lbNapis.TabIndex = 10;
-            lbNapis.Text = "label1";
+            lbNapis.Text = "Czas wykonania:";
             // 
             // lbCzas
             // 
             lbCzas.AutoSize = true;
             lbCzas.Location = new Point(598, 196);
             lbCzas.Name = "lbCzas";
-            lbCzas.Size = new Size(38, 15);
+            lbCzas.Size = new Size(12, 15);
             lbCzas.TabIndex = 11;
-            lbCzas.Text = "label1";
+            lbCzas.Text = "-";
+            lbCzas.Click += lbCzas_Click;
             // 
             // Form1
             // 

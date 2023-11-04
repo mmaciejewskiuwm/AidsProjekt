@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace AidsProjekt
 {
     public partial class Form1 : Form
@@ -24,7 +26,7 @@ namespace AidsProjekt
         string ConvertIntToString(int[] tab)
         {
             string napis = "";
-            for (int i = 0;i < tab.Length;i++)
+            for (int i = 0; i < tab.Length; i++)
             {
                 napis += tab[i].ToString();
                 napis += " ";
@@ -36,8 +38,12 @@ namespace AidsProjekt
         {
             try
             {
+                Stopwatch sw = new Stopwatch();
+                sw = Stopwatch.StartNew();
                 int[] SortedList = BubbleSort(Convert(tbxLiczba.Text));
+                sw.Stop();
                 tbxWynik.Text = ConvertIntToString(SortedList);
+                lbCzas.Text = sw.ToString();
             }
             catch (Exception ex)
             {
@@ -61,6 +67,11 @@ namespace AidsProjekt
         }
 
         private void tbxWynik_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbCzas_Click(object sender, EventArgs e)
         {
 
         }
