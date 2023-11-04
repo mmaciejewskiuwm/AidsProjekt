@@ -96,6 +96,19 @@ namespace AidsProjekt
 
         private void btSS_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Stopwatch sw = new Stopwatch();
+                sw = Stopwatch.StartNew();
+                int[] SortedList = SelectionSort(Convert(tbxLiczba.Text));
+                sw.Stop();
+                tbxWynik.Text = ConvertIntToString(SortedList);
+                lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("z³y format liczby musza byc oddzielone spacja");
+            }
 
         }
 
