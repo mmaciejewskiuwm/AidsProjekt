@@ -87,7 +87,7 @@
             btSI.Name = "btSI";
             btSI.Size = new Size(75, 47);
             btSI.TabIndex = 4;
-            btSI.Text = "Insert  Sort";
+            btSI.Text = "Insertion Sort";
             btSI.UseVisualStyleBackColor = true;
             btSI.Click += btSI_Click;
             // 

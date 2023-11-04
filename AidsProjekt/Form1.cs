@@ -83,6 +83,22 @@ namespace AidsProjekt
             }
             return tab;
         }
+        int[] InsertionSort(int[] tab)
+        {
+            int j,temp;
+            for(int i = 1; i < tab.Length; i++)
+            {
+                temp = tab[i];
+                j = i - 1;
+                while(j>=0 && tab[j]>temp)
+                {
+                    tab[j+1] = tab[j];
+                    --j;
+                }
+                tab[j + 1] = temp;  
+            }
+            return tab;
+        }
 
         private void tbxWynik_TextChanged(object sender, EventArgs e)
         {
@@ -114,6 +130,19 @@ namespace AidsProjekt
 
         private void btSI_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Stopwatch sw = new Stopwatch();
+                sw = Stopwatch.StartNew();
+                int[] SortedList = InsertionSort(Convert(tbxLiczba.Text));
+                sw.Stop();
+                tbxWynik.Text = ConvertIntToString(SortedList);
+                lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("z³y format liczby musza byc oddzielone spacja");
+            }
 
         }
 
