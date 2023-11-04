@@ -15,11 +15,36 @@ namespace AidsProjekt
         {
             var liczbyS = napis.Trim().Split(' ');
             var liczby = new int[liczbyS.Length];
-            for(int i = 0; i < liczbyS.Length; i++)
+            for (int i = 0; i < liczbyS.Length; i++)
             {
                 liczby[i] = int.Parse(liczbyS[i]);
             }
             return liczby;
+        }
+
+        private void btSB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int[] SortedList = BubbleSort(Convert(tbxLiczba.Text));
+            }catch(Exception ex)
+            {
+                MessageBox.Show("z³y format liczby musza byc oddzielone spacja");
+            }
+        }
+        int[] BubbleSort(int[] tab)
+        {
+            for (int i = 0; i < tab.Length; i++)
+                for (int j = 0; j < tab.Length - i - 1; j++) {
+                    if (tab[j] > tab[j + 1])
+                    {
+                        int temp = tab[j];
+                        tab[j] = tab[j + 1];
+                        tab[j+1] = temp;
+                    }
+          }
+            return tab;
+            
         }
     }
 }

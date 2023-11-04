@@ -68,6 +68,7 @@
             btSB.TabIndex = 2;
             btSB.Text = "button1";
             btSB.UseVisualStyleBackColor = true;
+            btSB.Click += btSB_Click;
             // 
             // btSS
             // 
