@@ -21,13 +21,25 @@ namespace AidsProjekt
             }
             return liczby;
         }
+        string ConvertIntToString(int[] tab)
+        {
+            string napis = "";
+            for (int i = 0;i < tab.Length;i++)
+            {
+                napis += tab[i].ToString();
+                napis += " ";
+            }
+            return napis;
+        }
 
         private void btSB_Click(object sender, EventArgs e)
         {
             try
             {
                 int[] SortedList = BubbleSort(Convert(tbxLiczba.Text));
-            }catch(Exception ex)
+                tbxWynik.Text = ConvertIntToString(SortedList);
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("z³y format liczby musza byc oddzielone spacja");
             }
@@ -35,16 +47,22 @@ namespace AidsProjekt
         int[] BubbleSort(int[] tab)
         {
             for (int i = 0; i < tab.Length; i++)
-                for (int j = 0; j < tab.Length - i - 1; j++) {
+                for (int j = 0; j < tab.Length - i - 1; j++)
+                {
                     if (tab[j] > tab[j + 1])
                     {
                         int temp = tab[j];
                         tab[j] = tab[j + 1];
-                        tab[j+1] = temp;
+                        tab[j + 1] = temp;
                     }
-          }
+                }
             return tab;
-            
+
+        }
+
+        private void tbxWynik_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -59,6 +59,7 @@
             tbxWynik.Name = "tbxWynik";
             tbxWynik.Size = new Size(185, 39);
             tbxWynik.TabIndex = 1;
+            tbxWynik.TextChanged += tbxWynik_TextChanged;
             // 
             // btSB
             // 
