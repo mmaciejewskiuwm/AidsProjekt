@@ -43,7 +43,7 @@ namespace AidsProjekt
                 int[] SortedList = BubbleSort(Convert(tbxLiczba.Text));
                 sw.Stop();
                 tbxWynik.Text = ConvertIntToString(SortedList);
-                lbCzas.Text = sw.ToString();
+                lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
             }
             catch (Exception ex)
             {
