@@ -114,8 +114,28 @@ namespace AidsProjekt
             {
                 lewy[i-srodek] = tab[i];
             }
+            MergeSort(lewy);
+            MergeSort(prawy);
+            Merge(tab, lewy, prawy);
 
 
+        }
+        void Merge(int[] tab,int[] lewy,int[] prawy)
+        {
+            int i = 0; int j = 0; int k = 0;
+            while (i < lewy.Length && j < prawy.Length)
+            {
+                if (lewy[i] <= prawy[j])
+                    tab[k++] = lewy[i++];
+                else
+                    tab[k++] = prawy[j++];
+            }
+
+            while (i < lewy.Length)
+                tab[k++] = lewy[i++];
+
+            while (j < prawy.Length)
+                tab[k++] = prawy[j++];
         }
 
         private void tbxWynik_TextChanged(object sender, EventArgs e)
