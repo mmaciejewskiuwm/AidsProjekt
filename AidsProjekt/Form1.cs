@@ -112,21 +112,21 @@ namespace AidsProjekt
             }
             for (int i = srodek; i< tab.Length; i++)
             {
-                lewy[i-srodek] = tab[i];
+                prawy[i-srodek] = tab[i];
             }
-            MergeSort(lewy);
-            MergeSort(prawy);
+            lewy = MergeSort(lewy);
+            prawy = MergeSort(prawy);
             return Merge(lewy, prawy);
 
 
         }
         int[] Merge(int[] lewy,int[] prawy)
         {
-            int[] tab = new int[lewy.Length+prawy.Length];
-            int i = 0; int j = 0; int k = 0;
+            int[] tab = new int[lewy.Length + prawy.Length];
+            int i = 0,j = 0,k = 0;
             while (i < lewy.Length && j < prawy.Length)
             {
-                if (lewy[i] <= prawy[j])
+                if (lewy[i] < prawy[j])
                     tab[k++] = lewy[i++];
                 else
                     tab[k++] = prawy[j++];
@@ -188,6 +188,19 @@ namespace AidsProjekt
 
         private void btSM_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Stopwatch sw = new Stopwatch();
+                sw = Stopwatch.StartNew();
+                int[] SortedList = MergeSort(Convert(tbxLiczba.Text));
+                sw.Stop();
+                tbxWynik.Text = ConvertIntToString(SortedList);
+                lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("z³y format liczby musza byc oddzielone spacja");
+            }
 
         }
 
