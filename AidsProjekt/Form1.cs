@@ -116,12 +116,13 @@ namespace AidsProjekt
             }
             MergeSort(lewy);
             MergeSort(prawy);
-            Merge(tab, lewy, prawy);
+            return Merge(lewy, prawy);
 
 
         }
-        void Merge(int[] tab,int[] lewy,int[] prawy)
+        int[] Merge(int[] lewy,int[] prawy)
         {
+            int[] tab = new int[lewy.Length+prawy.Length];
             int i = 0; int j = 0; int k = 0;
             while (i < lewy.Length && j < prawy.Length)
             {
@@ -136,6 +137,7 @@ namespace AidsProjekt
 
             while (j < prawy.Length)
                 tab[k++] = prawy[j++];
+            return tab;
         }
 
         private void tbxWynik_TextChanged(object sender, EventArgs e)
