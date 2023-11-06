@@ -69,17 +69,17 @@ namespace AidsProjekt
         }
         int[] InsertionSort(int[] tab)
         {
-            int j,temp;
-            for(int i = 1; i < tab.Length; i++)
+            int j, temp;
+            for (int i = 1; i < tab.Length; i++)
             {
                 temp = tab[i];
                 j = i - 1;
-                while(j>=0 && tab[j]>temp)
+                while (j >= 0 && tab[j] > temp)
                 {
-                    tab[j+1] = tab[j];
+                    tab[j + 1] = tab[j];
                     --j;
                 }
-                tab[j + 1] = temp;  
+                tab[j + 1] = temp;
             }
             return tab;
         }
@@ -90,13 +90,13 @@ namespace AidsProjekt
             int[] lewy = new int[srodek];
             int[] prawy = new int[tab.Length - srodek];
 
-            for (int i = 0; i< srodek; i++)
+            for (int i = 0; i < srodek; i++)
             {
                 lewy[i] = tab[i];
             }
-            for (int i = srodek; i< tab.Length; i++)
+            for (int i = srodek; i < tab.Length; i++)
             {
-                prawy[i-srodek] = tab[i];
+                prawy[i - srodek] = tab[i];
             }
             lewy = MergeSort(lewy);
             prawy = MergeSort(prawy);
@@ -104,10 +104,10 @@ namespace AidsProjekt
 
 
         }
-        int[] Merge(int[] lewy,int[] prawy)
+        int[] Merge(int[] lewy, int[] prawy)
         {
             int[] tab = new int[lewy.Length + prawy.Length];
-            int i = 0,j = 0,k = 0;
+            int i = 0, j = 0, k = 0;
             while (i < lewy.Length && j < prawy.Length)
             {
                 if (lewy[i] < prawy[j])
@@ -122,6 +122,40 @@ namespace AidsProjekt
             while (j < prawy.Length)
                 tab[k++] = prawy[j++];
             return tab;
+        }
+        int[] QuickSort(int[] tab, int lewy, int prawy)
+        {
+            if (lewy < prawy)
+            {
+                int pivot = Partition(tab, lewy, prawy);
+
+                QuickSort(tab, lewy, pivot - 1);
+                QuickSort(tab, pivot + 1, prawy);
+            }
+            return tab;
+        }
+
+        int Partition(int[] tab, int left, int right)
+        {
+            int pivot = tab[right];
+            int i = left - 1;
+
+            for (int j = left; j < right; j++)
+            {
+                if (tab[j] <= pivot)
+                {
+                    i++;
+                    int temp = tab[i];
+                    tab[i] = tab[j];
+                    tab[j] = temp;
+                }
+            }
+
+            int temp2 = tab[i + 1];
+            tab[i + 1] = tab[right];
+            tab[right] = temp2;
+
+            return i + 1;
         }
 
         private void tbxWynik_TextChanged(object sender, EventArgs e)
@@ -210,7 +244,46 @@ namespace AidsProjekt
 
         private void btSQ_Click(object sender, EventArgs e)
         {
+            try
+            {
+                lbCzas.Text = "-";
+                Stopwatch sw = new Stopwatch();
+                sw = Stopwatch.StartNew();
+                int[] SortedList = QuickSort(Convert(tbxLiczba.Text), 0, Convert(tbxLiczba.Text).Length - 1);
+                sw.Stop();
+                tbxWynik.Text = ConvertIntToString(SortedList);
+                lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("z³y format liczby musza byc oddzielone spacja");
+            }
 
+        }
+
+        //numeric ustawienia
+        private void nudDlugosc_ValueChanged(object sender, EventArgs e)
+        {
+            nudDlugosc.Maximum = 2000000;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chbPrzelacz_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbPrzelacz.Checked)
+            {
+                lbNapisPrawa.ForeColor = Color.Black;
+                lbNapisLewa.ForeColor = Color.Gray;
+            }
+            else
+            {
+                lbNapisLewa.ForeColor = Color.Black;
+                lbNapisPrawa.ForeColor = Color.Gray;
+            }
         }
     }
 }

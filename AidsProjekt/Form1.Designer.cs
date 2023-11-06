@@ -40,6 +40,8 @@
             btGen = new Button();
             lbNapis = new Label();
             lbCzas = new Label();
+            lbNapisLewa = new Label();
+            lbNapisPrawa = new Label();
             ((System.ComponentModel.ISupportInitialize)nudDlugosc).BeginInit();
             SuspendLayout();
             // 
@@ -120,6 +122,7 @@
             chbPrzelacz.TabIndex = 7;
             chbPrzelacz.Text = "Aktualna strona";
             chbPrzelacz.UseVisualStyleBackColor = true;
+            chbPrzelacz.CheckedChanged += chbPrzelacz_CheckedChanged;
             // 
             // nudDlugosc
             // 
@@ -127,6 +130,7 @@
             nudDlugosc.Name = "nudDlugosc";
             nudDlugosc.Size = new Size(182, 23);
             nudDlugosc.TabIndex = 8;
+            nudDlugosc.ValueChanged += nudDlugosc_ValueChanged;
             // 
             // btGen
             // 
@@ -156,11 +160,35 @@
             lbCzas.Text = "-";
             lbCzas.Click += lbCzas_Click;
             // 
+            // lbNapisLewa
+            // 
+            lbNapisLewa.AutoSize = true;
+            lbNapisLewa.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            lbNapisLewa.Location = new Point(130, 9);
+            lbNapisLewa.Name = "lbNapisLewa";
+            lbNapisLewa.Size = new Size(71, 32);
+            lbNapisLewa.TabIndex = 12;
+            lbNapisLewa.Text = "Lewa";
+            lbNapisLewa.Click += label1_Click;
+            // 
+            // lbNapisPrawa
+            // 
+            lbNapisPrawa.AutoSize = true;
+            lbNapisPrawa.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            lbNapisPrawa.ForeColor = SystemColors.AppWorkspace;
+            lbNapisPrawa.Location = new Point(592, 9);
+            lbNapisPrawa.Name = "lbNapisPrawa";
+            lbNapisPrawa.Size = new Size(84, 32);
+            lbNapisPrawa.TabIndex = 13;
+            lbNapisPrawa.Text = "Prawa";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lbNapisPrawa);
+            Controls.Add(lbNapisLewa);
             Controls.Add(lbCzas);
             Controls.Add(lbNapis);
             Controls.Add(btGen);
@@ -194,5 +222,7 @@
         private Button btGen;
         private Label lbNapis;
         private Label lbCzas;
+        private Label lbNapisLewa;
+        private Label lbNapisPrawa;
     }
 }
