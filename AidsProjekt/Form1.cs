@@ -34,22 +34,6 @@ namespace AidsProjekt
             return napis;
         }
 
-        private void btSB_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Stopwatch sw = new Stopwatch();
-                sw = Stopwatch.StartNew();
-                int[] SortedList = BubbleSort(Convert(tbxLiczba.Text));
-                sw.Stop();
-                tbxWynik.Text = ConvertIntToString(SortedList);
-                lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("z³y format liczby musza byc oddzielone spacja");
-            }
-        }
         int[] BubbleSort(int[] tab)
         {
             for (int i = 0; i < tab.Length; i++)
@@ -149,11 +133,29 @@ namespace AidsProjekt
         {
 
         }
+        private void btSB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lbCzas.Text = "-";
+                Stopwatch sw = new Stopwatch();
+                sw = Stopwatch.StartNew();
+                int[] SortedList = BubbleSort(Convert(tbxLiczba.Text));
+                sw.Stop();
+                tbxWynik.Text = ConvertIntToString(SortedList);
+                lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("z³y format liczby musza byc oddzielone spacja");
+            }
+        }
 
         private void btSS_Click(object sender, EventArgs e)
         {
             try
             {
+                lbCzas.Text = "-";
                 Stopwatch sw = new Stopwatch();
                 sw = Stopwatch.StartNew();
                 int[] SortedList = SelectionSort(Convert(tbxLiczba.Text));
@@ -172,6 +174,7 @@ namespace AidsProjekt
         {
             try
             {
+                lbCzas.Text = "-";
                 Stopwatch sw = new Stopwatch();
                 sw = Stopwatch.StartNew();
                 int[] SortedList = InsertionSort(Convert(tbxLiczba.Text));
@@ -190,6 +193,7 @@ namespace AidsProjekt
         {
             try
             {
+                lbCzas.Text = "-";
                 Stopwatch sw = new Stopwatch();
                 sw = Stopwatch.StartNew();
                 int[] SortedList = MergeSort(Convert(tbxLiczba.Text));
