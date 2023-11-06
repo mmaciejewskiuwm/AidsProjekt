@@ -140,6 +140,7 @@
             btGen.TabIndex = 9;
             btGen.Text = "Generuj!";
             btGen.UseVisualStyleBackColor = true;
+            btGen.Click += btGen_Click;
             // 
             // lbNapis
             // 

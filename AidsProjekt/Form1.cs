@@ -4,6 +4,7 @@ namespace AidsProjekt
 {
     public partial class Form1 : Form
     {
+        int[] PrawaLista;
         public Form1()
         {
             InitializeComponent();
@@ -135,12 +136,12 @@ namespace AidsProjekt
             return tab;
         }
 
-        int Partition(int[] tab, int left, int right)
+        int Partition(int[] tab, int lewy, int prawy)
         {
-            int pivot = tab[right];
-            int i = left - 1;
+            int pivot = tab[prawy];
+            int i = lewy - 1;
 
-            for (int j = left; j < right; j++)
+            for (int j = lewy; j < prawy; j++)
             {
                 if (tab[j] <= pivot)
                 {
@@ -152,8 +153,8 @@ namespace AidsProjekt
             }
 
             int temp2 = tab[i + 1];
-            tab[i + 1] = tab[right];
-            tab[right] = temp2;
+            tab[i + 1] = tab[prawy];
+            tab[prawy] = temp2;
 
             return i + 1;
         }
@@ -169,20 +170,39 @@ namespace AidsProjekt
         }
         private void btSB_Click(object sender, EventArgs e)
         {
-            try
+            if (chbPrzelacz.Checked)
             {
-                lbCzas.Text = "-";
-                Stopwatch sw = new Stopwatch();
-                sw = Stopwatch.StartNew();
-                int[] SortedList = BubbleSort(Convert(tbxLiczba.Text));
-                sw.Stop();
-                tbxWynik.Text = ConvertIntToString(SortedList);
-                lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
+                if (PrawaLista.Length > 0)
+                {
+                    lbCzas.Text = "-";
+                    Stopwatch sw = new Stopwatch();
+                    sw = Stopwatch.StartNew();
+                    int[] SortedList = BubbleSort(PrawaLista);
+                    sw.Stop();
+                    tbxWynik.Text = ConvertIntToString(SortedList);
+                    lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
+                }
+                else
+                    MessageBox.Show('Lista jest pusta');
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("z³y format liczby musza byc oddzielone spacja");
+                try
+                {
+                    lbCzas.Text = "-";
+                    Stopwatch sw = new Stopwatch();
+                    sw = Stopwatch.StartNew();
+                    int[] SortedList = BubbleSort(Convert(tbxLiczba.Text));
+                    sw.Stop();
+                    tbxWynik.Text = ConvertIntToString(SortedList);
+                    lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("z³y format liczby musza byc oddzielone spacja");
+                }
             }
+
         }
 
         private void btSS_Click(object sender, EventArgs e)
@@ -284,6 +304,24 @@ namespace AidsProjekt
                 lbNapisLewa.ForeColor = Color.Black;
                 lbNapisPrawa.ForeColor = Color.Gray;
             }
+        }
+        //Generowanie Listy
+        private void btGen_Click(object sender, EventArgs e)
+        {
+            if ((int)nudDlugosc.Value == 0)
+            {
+                MessageBox.Show("Lista musi byc dluzsza niz 0");
+            }
+            else
+            {
+                int[] PrawaLista = new int[(int)nudDlugosc.Value];
+                Random rnd = new Random();
+                for (int i = 0; i < PrawaLista.Length; i++)
+                {
+                    PrawaLista[i] = rnd.Next(0, 1001);
+                }
+            }
+
         }
     }
 }
