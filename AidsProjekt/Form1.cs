@@ -173,13 +173,16 @@ namespace AidsProjekt
         {
             if (chbPrzelacz.Checked)
             {
+                if (GlobalList.Length == 0) MessageBox.Show("lista nie moze byc pusta");
+                else
+                {
                     lbCzas.Text = "-";
                     Stopwatch sw = new Stopwatch();
                     sw = Stopwatch.StartNew();
                     int[] SortedList = BubbleSort(GlobalList);
                     sw.Stop();
                     lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
-                MessageBox.Show(printuj(SortedList));
+                }
             }
             else
             {
@@ -307,6 +310,10 @@ namespace AidsProjekt
             if ((int)nudDlugosc.Value == 0)
             {
                 MessageBox.Show("Lista musi byc dluzsza niz 0");
+            }
+            else if ((int)nudDlugosc.Value > 2000000)
+            {
+                MessageBox.Show("Lista ma byc krotsza niz 2mln");
             }
             else
             {
