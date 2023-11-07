@@ -4,7 +4,8 @@ namespace AidsProjekt
 {
     public partial class Form1 : Form
     {
-        int[] PrawaLista;
+        int[] GlobalList = new int[0];
+        bool isgenerated = false;
         public Form1()
         {
             InitializeComponent();
@@ -172,18 +173,13 @@ namespace AidsProjekt
         {
             if (chbPrzelacz.Checked)
             {
-                if (PrawaLista.Length > 0)
-                {
                     lbCzas.Text = "-";
                     Stopwatch sw = new Stopwatch();
                     sw = Stopwatch.StartNew();
-                    int[] SortedList = BubbleSort(PrawaLista);
+                    int[] SortedList = BubbleSort(GlobalList);
                     sw.Stop();
-                    tbxWynik.Text = ConvertIntToString(SortedList);
                     lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
-                }
-                else
-                    MessageBox.Show('Lista jest pusta');
+                MessageBox.Show(printuj(SortedList));
             }
             else
             {
@@ -314,14 +310,27 @@ namespace AidsProjekt
             }
             else
             {
-                int[] PrawaLista = new int[(int)nudDlugosc.Value];
+                GlobalList = new int[(int)nudDlugosc.Value];
+
                 Random rnd = new Random();
-                for (int i = 0; i < PrawaLista.Length; i++)
+                for (int i = 0; i < GlobalList.Length; i++)
                 {
-                    PrawaLista[i] = rnd.Next(0, 1001);
+                    GlobalList[i] = rnd.Next(0, 1001);
                 }
+                isgenerated = true;
             }
 
+        }
+        // tester
+        String printuj(int[] lista)
+        {
+            String print = "";
+            for (int i = 0;i < lista.Length;i++)
+            {
+                print += lista[i].ToString();
+                print += " ";
+            }
+            return print;
         }
     }
 }
