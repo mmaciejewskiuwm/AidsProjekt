@@ -42,6 +42,8 @@
             lbCzas = new Label();
             lbNapisLewa = new Label();
             lbNapisPrawa = new Label();
+            btWyswietl = new Button();
+            btWyczysc = new Button();
             ((System.ComponentModel.ISupportInitialize)nudDlugosc).BeginInit();
             SuspendLayout();
             // 
@@ -183,11 +185,33 @@
             lbNapisPrawa.TabIndex = 13;
             lbNapisPrawa.Text = "Prawa";
             // 
+            // btWyswietl
+            // 
+            btWyswietl.Location = new Point(515, 380);
+            btWyswietl.Name = "btWyswietl";
+            btWyswietl.Size = new Size(104, 58);
+            btWyswietl.TabIndex = 14;
+            btWyswietl.Text = "Wyswietl wygenerowana liste";
+            btWyswietl.UseVisualStyleBackColor = true;
+            btWyswietl.Click += btWyswietl_Click;
+            // 
+            // btWyczysc
+            // 
+            btWyczysc.Location = new Point(656, 380);
+            btWyczysc.Name = "btWyczysc";
+            btWyczysc.Size = new Size(102, 58);
+            btWyczysc.TabIndex = 15;
+            btWyczysc.Text = "Wyczysc wygenerowana liste";
+            btWyczysc.UseVisualStyleBackColor = true;
+            btWyczysc.Click += button1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btWyczysc);
+            Controls.Add(btWyswietl);
             Controls.Add(lbNapisPrawa);
             Controls.Add(lbNapisLewa);
             Controls.Add(lbCzas);
@@ -225,5 +249,7 @@
         private Label lbCzas;
         private Label lbNapisLewa;
         private Label lbNapisPrawa;
+        private Button btWyswietl;
+        private Button btWyczysc;
     }
 }

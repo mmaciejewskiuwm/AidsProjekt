@@ -332,12 +332,26 @@ namespace AidsProjekt
         String printuj(int[] lista)
         {
             String print = "";
-            for (int i = 0;i < lista.Length;i++)
+            for (int i = 0; i < lista.Length; i++)
             {
                 print += lista[i].ToString();
                 print += " ";
             }
             return print;
+        }
+
+        private void btWyswietl_Click(object sender, EventArgs e)
+        {
+            if (isgenerated)
+                MessageBox.Show(printuj(GlobalList));
+            else
+                MessageBox.Show("Nie wygenerowales listy!");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GlobalList = new int[0];
+            isgenerated = false;
         }
     }
 }
