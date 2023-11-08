@@ -317,7 +317,7 @@ namespace AidsProjekt
                     lbCzas.Text = "-";
                     Stopwatch sw = new Stopwatch();
                     sw = Stopwatch.StartNew();
-                    GlobalList = QuickSort(Convert(tbxLiczba.Text), 0, Convert(tbxLiczba.Text).Length - 1);
+                    GlobalList = QuickSort(GlobalList,0,GlobalList.Length-1);
                     sw.Stop();
                     lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
                 }
