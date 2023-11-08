@@ -179,7 +179,7 @@ namespace AidsProjekt
                     lbCzas.Text = "-";
                     Stopwatch sw = new Stopwatch();
                     sw = Stopwatch.StartNew();
-                    int[] SortedList = BubbleSort(GlobalList);
+                    GlobalList = BubbleSort(GlobalList);
                     sw.Stop();
                     lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
                 }
@@ -206,78 +206,139 @@ namespace AidsProjekt
 
         private void btSS_Click(object sender, EventArgs e)
         {
-            try
+            if (chbPrzelacz.Checked)
             {
-                lbCzas.Text = "-";
-                Stopwatch sw = new Stopwatch();
-                sw = Stopwatch.StartNew();
-                int[] SortedList = SelectionSort(Convert(tbxLiczba.Text));
-                sw.Stop();
-                tbxWynik.Text = ConvertIntToString(SortedList);
-                lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
+                if (isgenerated == false) MessageBox.Show("najpierw wygeneruj liste!");
+                else
+                {
+                    lbCzas.Text = "-";
+                    Stopwatch sw = new Stopwatch();
+                    sw = Stopwatch.StartNew();
+                    GlobalList = SelectionSort(GlobalList);
+                    sw.Stop();
+                    lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("z造 format liczby musza byc oddzielone spacja");
+                try
+                {
+                    lbCzas.Text = "-";
+                    Stopwatch sw = new Stopwatch();
+                    sw = Stopwatch.StartNew();
+                    int[] SortedList = SelectionSort(Convert(tbxLiczba.Text));
+                    sw.Stop();
+                    tbxWynik.Text = ConvertIntToString(SortedList);
+                    lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("z造 format liczby musza byc oddzielone spacja");
+                }
             }
-
         }
 
         private void btSI_Click(object sender, EventArgs e)
         {
-            try
+            if (chbPrzelacz.Checked)
             {
-                lbCzas.Text = "-";
-                Stopwatch sw = new Stopwatch();
-                sw = Stopwatch.StartNew();
-                int[] SortedList = InsertionSort(Convert(tbxLiczba.Text));
-                sw.Stop();
-                tbxWynik.Text = ConvertIntToString(SortedList);
-                lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
+                if (isgenerated == false) MessageBox.Show("najpierw wygeneruj liste!");
+                else
+                {
+                    lbCzas.Text = "-";
+                    Stopwatch sw = new Stopwatch();
+                    sw = Stopwatch.StartNew();
+                    GlobalList = InsertionSort(GlobalList);
+                    sw.Stop();
+                    lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("z造 format liczby musza byc oddzielone spacja");
+                try
+                {
+                    lbCzas.Text = "-";
+                    Stopwatch sw = new Stopwatch();
+                    sw = Stopwatch.StartNew();
+                    int[] SortedList = InsertionSort(Convert(tbxLiczba.Text));
+                    sw.Stop();
+                    tbxWynik.Text = ConvertIntToString(SortedList);
+                    lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("z造 format liczby musza byc oddzielone spacja");
+                }
             }
-
         }
 
         private void btSM_Click(object sender, EventArgs e)
         {
-            try
+            if (chbPrzelacz.Checked)
             {
-                lbCzas.Text = "-";
-                Stopwatch sw = new Stopwatch();
-                sw = Stopwatch.StartNew();
-                int[] SortedList = MergeSort(Convert(tbxLiczba.Text));
-                sw.Stop();
-                tbxWynik.Text = ConvertIntToString(SortedList);
-                lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
+                if (isgenerated == false) MessageBox.Show("najpierw wygeneruj liste!");
+                else
+                {
+                    lbCzas.Text = "-";
+                    Stopwatch sw = new Stopwatch();
+                    sw = Stopwatch.StartNew();
+                    GlobalList = MergeSort(GlobalList);
+                    sw.Stop();
+                    lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("z造 format liczby musza byc oddzielone spacja");
+                try
+                {
+                    lbCzas.Text = "-";
+                    Stopwatch sw = new Stopwatch();
+                    sw = Stopwatch.StartNew();
+                    int[] SortedList = MergeSort(Convert(tbxLiczba.Text));
+                    sw.Stop();
+                    tbxWynik.Text = ConvertIntToString(SortedList);
+                    lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("z造 format liczby musza byc oddzielone spacja");
+                }
             }
 
         }
 
         private void btSQ_Click(object sender, EventArgs e)
         {
-            try
+            if (chbPrzelacz.Checked)
             {
-                lbCzas.Text = "-";
-                Stopwatch sw = new Stopwatch();
-                sw = Stopwatch.StartNew();
-                int[] SortedList = QuickSort(Convert(tbxLiczba.Text), 0, Convert(tbxLiczba.Text).Length - 1);
-                sw.Stop();
-                tbxWynik.Text = ConvertIntToString(SortedList);
-                lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
+                if (isgenerated == false) MessageBox.Show("najpierw wygeneruj liste!");
+                else
+                {
+                    lbCzas.Text = "-";
+                    Stopwatch sw = new Stopwatch();
+                    sw = Stopwatch.StartNew();
+                    GlobalList = QuickSort(Convert(tbxLiczba.Text), 0, Convert(tbxLiczba.Text).Length - 1);
+                    sw.Stop();
+                    lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("z造 format liczby musza byc oddzielone spacja");
+                try
+                {
+                    lbCzas.Text = "-";
+                    Stopwatch sw = new Stopwatch();
+                    sw = Stopwatch.StartNew();
+                    int[] SortedList = QuickSort(Convert(tbxLiczba.Text), 0, Convert(tbxLiczba.Text).Length - 1);
+                    sw.Stop();
+                    tbxWynik.Text = ConvertIntToString(SortedList);
+                    lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("z造 format liczby musza byc oddzielone spacja");
+                }
             }
-
         }
 
         //numeric ustawienia
