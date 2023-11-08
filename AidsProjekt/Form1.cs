@@ -317,7 +317,7 @@ namespace AidsProjekt
                     lbCzas.Text = "-";
                     Stopwatch sw = new Stopwatch();
                     sw = Stopwatch.StartNew();
-                    GlobalList = QuickSort(GlobalList,0,GlobalList.Length-1);
+                    GlobalList = QuickSort(GlobalList, 0, GlobalList.Length - 1);
                     sw.Stop();
                     lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
                 }
@@ -418,6 +418,12 @@ namespace AidsProjekt
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btCzyscListy_Click(object sender, EventArgs e)
+        {
+            tbxLiczba.Clear();
+            tbxWynik.Clear();
         }
     }
 }

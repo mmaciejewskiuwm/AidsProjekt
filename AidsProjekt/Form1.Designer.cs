@@ -47,6 +47,7 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            btCzyscListy = new Button();
             ((System.ComponentModel.ISupportInitialize)nudDlugosc).BeginInit();
             SuspendLayout();
             // 
@@ -61,7 +62,7 @@
             // 
             // tbxWynik
             // 
-            tbxWynik.Location = new Point(76, 172);
+            tbxWynik.Location = new Point(76, 169);
             tbxWynik.Multiline = true;
             tbxWynik.Name = "tbxWynik";
             tbxWynik.Size = new Size(185, 39);
@@ -220,7 +221,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(111, 154);
+            label2.Location = new Point(111, 143);
             label2.Name = "label2";
             label2.Size = new Size(104, 15);
             label2.TabIndex = 17;
@@ -236,11 +237,22 @@
             label3.TabIndex = 18;
             label3.Text = "Podaj dlugosc listy do wygenerowania :";
             // 
+            // btCzyscListy
+            // 
+            btCzyscListy.Location = new Point(128, 226);
+            btCzyscListy.Name = "btCzyscListy";
+            btCzyscListy.Size = new Size(87, 52);
+            btCzyscListy.TabIndex = 19;
+            btCzyscListy.Text = "Wyczysc pola z listami";
+            btCzyscListy.UseVisualStyleBackColor = true;
+            btCzyscListy.Click += btCzyscListy_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btCzyscListy);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -288,5 +300,6 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private Button btCzyscListy;
     }
 }
