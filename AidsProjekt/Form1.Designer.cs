@@ -44,12 +44,15 @@
             lbNapisPrawa = new Label();
             btWyswietl = new Button();
             btWyczysc = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)nudDlugosc).BeginInit();
             SuspendLayout();
             // 
             // tbxLiczba
             // 
-            tbxLiczba.Location = new Point(76, 60);
+            tbxLiczba.Location = new Point(76, 86);
             tbxLiczba.Multiline = true;
             tbxLiczba.Name = "tbxLiczba";
             tbxLiczba.Size = new Size(185, 37);
@@ -97,7 +100,7 @@
             // 
             // btSM
             // 
-            btSM.Location = new Point(515, 315);
+            btSM.Location = new Point(521, 315);
             btSM.Name = "btSM";
             btSM.Size = new Size(75, 47);
             btSM.TabIndex = 5;
@@ -107,7 +110,7 @@
             // 
             // btSQ
             // 
-            btSQ.Location = new Point(656, 315);
+            btSQ.Location = new Point(659, 315);
             btSQ.Name = "btSQ";
             btSQ.Size = new Size(75, 47);
             btSQ.TabIndex = 6;
@@ -118,17 +121,17 @@
             // chbPrzelacz
             // 
             chbPrzelacz.AutoSize = true;
-            chbPrzelacz.Location = new Point(351, 62);
+            chbPrzelacz.Location = new Point(329, 86);
             chbPrzelacz.Name = "chbPrzelacz";
-            chbPrzelacz.Size = new Size(109, 19);
+            chbPrzelacz.Size = new Size(148, 19);
             chbPrzelacz.TabIndex = 7;
-            chbPrzelacz.Text = "Aktualna strona";
+            chbPrzelacz.Text = "Aktualnie wybrana lista";
             chbPrzelacz.UseVisualStyleBackColor = true;
             chbPrzelacz.CheckedChanged += chbPrzelacz_CheckedChanged;
             // 
             // nudDlugosc
             // 
-            nudDlugosc.Location = new Point(536, 58);
+            nudDlugosc.Location = new Point(538, 86);
             nudDlugosc.Name = "nudDlugosc";
             nudDlugosc.Size = new Size(182, 23);
             nudDlugosc.TabIndex = 8;
@@ -136,7 +139,7 @@
             // 
             // btGen
             // 
-            btGen.Location = new Point(560, 107);
+            btGen.Location = new Point(560, 115);
             btGen.Name = "btGen";
             btGen.Size = new Size(116, 43);
             btGen.TabIndex = 9;
@@ -147,7 +150,7 @@
             // lbNapis
             // 
             lbNapis.AutoSize = true;
-            lbNapis.Location = new Point(485, 196);
+            lbNapis.Location = new Point(329, 172);
             lbNapis.Name = "lbNapis";
             lbNapis.Size = new Size(94, 15);
             lbNapis.TabIndex = 10;
@@ -156,7 +159,7 @@
             // lbCzas
             // 
             lbCzas.AutoSize = true;
-            lbCzas.Location = new Point(598, 196);
+            lbCzas.Location = new Point(441, 172);
             lbCzas.Name = "lbCzas";
             lbCzas.Size = new Size(12, 15);
             lbCzas.TabIndex = 11;
@@ -187,9 +190,9 @@
             // 
             // btWyswietl
             // 
-            btWyswietl.Location = new Point(515, 380);
+            btWyswietl.Location = new Point(538, 183);
             btWyswietl.Name = "btWyswietl";
-            btWyswietl.Size = new Size(104, 58);
+            btWyswietl.Size = new Size(95, 58);
             btWyswietl.TabIndex = 14;
             btWyswietl.Text = "Wyswietl wygenerowana liste";
             btWyswietl.UseVisualStyleBackColor = true;
@@ -197,19 +200,50 @@
             // 
             // btWyczysc
             // 
-            btWyczysc.Location = new Point(656, 380);
+            btWyczysc.Location = new Point(639, 183);
             btWyczysc.Name = "btWyczysc";
-            btWyczysc.Size = new Size(102, 58);
+            btWyczysc.Size = new Size(95, 58);
             btWyczysc.TabIndex = 15;
             btWyczysc.Text = "Wyczysc wygenerowana liste";
             btWyczysc.UseVisualStyleBackColor = true;
             btWyczysc.Click += button1_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(137, 63);
+            label1.Name = "label1";
+            label1.Size = new Size(64, 15);
+            label1.TabIndex = 16;
+            label1.Text = "Twoja lista:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(111, 154);
+            label2.Name = "label2";
+            label2.Size = new Size(104, 15);
+            label2.TabIndex = 17;
+            label2.Text = "Wynik sortowania:";
+            label2.Click += label2_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(522, 63);
+            label3.Name = "label3";
+            label3.Size = new Size(215, 15);
+            label3.TabIndex = 18;
+            label3.Text = "Podaj dlugosc listy do wygenerowania :";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(btWyczysc);
             Controls.Add(btWyswietl);
             Controls.Add(lbNapisPrawa);
@@ -251,5 +285,8 @@
         private Label lbNapisPrawa;
         private Button btWyswietl;
         private Button btWyczysc;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }

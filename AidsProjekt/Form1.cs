@@ -173,7 +173,7 @@ namespace AidsProjekt
         {
             if (chbPrzelacz.Checked)
             {
-                if (GlobalList.Length == 0) MessageBox.Show("lista nie moze byc pusta");
+                if (isgenerated == false) MessageBox.Show("najpierw wygeneruj liste!");
                 else
                 {
                     lbCzas.Text = "-";
@@ -352,6 +352,11 @@ namespace AidsProjekt
         {
             GlobalList = new int[0];
             isgenerated = false;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
