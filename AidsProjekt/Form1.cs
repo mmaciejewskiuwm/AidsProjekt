@@ -1,3 +1,4 @@
+using Microsoft.VisualBasic.Logging;
 using System.Diagnostics;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -134,27 +135,15 @@ namespace AidsProjekt
                 tab[k++] = prawy[j++];
             return tab;
         }
-        int[] QuickSort(int[] tab, int lewy, int prawy)
-        {
-            pbSorty.PerformStep();
-            if (lewy < prawy)
-            {
-                int pivot = Partition(tab, lewy, prawy);
 
-                QuickSort(tab, lewy, pivot - 1);
-                QuickSort(tab, pivot + 1, prawy);
-            }
-            return tab;
-        }
-
-        int Partition(int[] tab, int lewy, int prawy)
+        int Podzial(int[] tab, int lewy, int prawy)
         {
-            int pivot = tab[prawy];
+            int bufor = tab[prawy];
             int i = lewy - 1;
 
             for (int j = lewy; j < prawy; j++)
             {
-                if (tab[j] <= pivot)
+                if (tab[j] <= bufor)
                 {
                     i++;
                     int temp = tab[i];
@@ -168,6 +157,18 @@ namespace AidsProjekt
             tab[prawy] = temp2;
 
             return i + 1;
+        }
+        int[] QuickSort(int[] tablica, int lewyIndeks, int prawyIndeks)
+        {
+            if(pbSorty.Value != pbSorty.Maximum - 1)
+                pbSorty.PerformStep();
+            if (lewyIndeks < prawyIndeks)
+            {
+                int indeksSrodka = Podzial(tablica, lewyIndeks, prawyIndeks);
+                QuickSort(tablica, lewyIndeks, indeksSrodka - 1);
+                QuickSort(tablica, indeksSrodka + 1, prawyIndeks);
+            }
+            return tablica;
         }
 
         private void tbxWynik_TextChanged(object sender, EventArgs e)
@@ -460,7 +461,10 @@ namespace AidsProjekt
             {
                 pbGeneracja.Visible = true;
                 pbGeneracja.Minimum = 1;
-                pbGeneracja.Maximum = (int)nudDlugosc.Value;
+                if ((int)nudDlugosc.Value == 1)
+                    pbGeneracja.Maximum = (int)nudDlugosc.Value + 1;
+                else
+                    pbGeneracja.Maximum = (int)nudDlugosc.Value;
                 pbGeneracja.Value = 1;
                 pbGeneracja.Step = 1;
                 Cursor.Current = Cursors.WaitCursor;
@@ -502,6 +506,8 @@ namespace AidsProjekt
             GlobalList = new int[0];
             isgenerated = false;
             pbGeneracja.Value = 1;
+            if(chbPrzelacz.Checked)
+                pbSorty.Value = 1;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -513,6 +519,7 @@ namespace AidsProjekt
         {
             tbxLiczba.Clear();
             tbxWynik.Clear();
+            pbSorty.Value = 1;
         }
 
     }
