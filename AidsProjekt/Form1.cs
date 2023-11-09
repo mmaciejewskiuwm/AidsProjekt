@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AidsProjekt
 {
@@ -6,10 +7,12 @@ namespace AidsProjekt
     {
         int[] GlobalList = new int[0];
         bool isgenerated = false;
+
         public Form1()
         {
             InitializeComponent();
         }
+
 
         private void tbxLiczba_TextChanged(object sender, EventArgs e)
         {
@@ -39,6 +42,7 @@ namespace AidsProjekt
         int[] BubbleSort(int[] tab)
         {
             for (int i = 0; i < tab.Length; i++)
+            {
                 for (int j = 0; j < tab.Length - i - 1; j++)
                 {
                     if (tab[j] > tab[j + 1])
@@ -48,6 +52,8 @@ namespace AidsProjekt
                         tab[j + 1] = temp;
                     }
                 }
+                pbSorty.PerformStep();
+            }
             return tab;
 
         }
@@ -66,6 +72,7 @@ namespace AidsProjekt
                         tab[k] = temp;
                     }
                 }
+             pbSorty.PerformStep();
             }
             return tab;
         }
@@ -82,11 +89,13 @@ namespace AidsProjekt
                     --j;
                 }
                 tab[j + 1] = temp;
+                pbSorty.PerformStep();
             }
             return tab;
         }
         int[] MergeSort(int[] tab)
         {
+            pbSorty.PerformStep();
             if (tab.Length <= 1) return tab;
             int srodek = tab.Length / 2;
             int[] lewy = new int[srodek];
@@ -127,6 +136,7 @@ namespace AidsProjekt
         }
         int[] QuickSort(int[] tab, int lewy, int prawy)
         {
+            pbSorty.PerformStep();
             if (lewy < prawy)
             {
                 int pivot = Partition(tab, lewy, prawy);
@@ -177,6 +187,11 @@ namespace AidsProjekt
                 else
                 {
                     lbCzas.Text = "-";
+                    pbSorty.Visible = true;
+                    pbSorty.Minimum = 1;
+                    pbSorty.Maximum = GlobalList.Length;
+                    pbSorty.Value = 1;
+                    pbSorty.Step = 1;
                     Cursor.Current = Cursors.WaitCursor;
                     Stopwatch sw = new Stopwatch();
                     sw = Stopwatch.StartNew();
@@ -190,6 +205,11 @@ namespace AidsProjekt
             {
                 try
                 {
+                    pbSorty.Visible = true;
+                    pbSorty.Minimum = 1;
+                    pbSorty.Maximum = Convert(tbxLiczba.Text).Length;
+                    pbSorty.Value = 1;
+                    pbSorty.Step = 1;
                     lbCzas.Text = "-";
                     Cursor.Current = Cursors.WaitCursor;
                     Stopwatch sw = new Stopwatch();
@@ -215,6 +235,11 @@ namespace AidsProjekt
                 if (isgenerated == false) MessageBox.Show("najpierw wygeneruj liste!");
                 else
                 {
+                    pbSorty.Visible = true;
+                    pbSorty.Minimum = 1;
+                    pbSorty.Maximum = GlobalList.Length;
+                    pbSorty.Value = 1;
+                    pbSorty.Step = 1;
                     lbCzas.Text = "-";
                     Cursor.Current = Cursors.WaitCursor;
                     Stopwatch sw = new Stopwatch();
@@ -229,6 +254,11 @@ namespace AidsProjekt
             {
                 try
                 {
+                    pbSorty.Visible = true;
+                    pbSorty.Minimum = 1;
+                    pbSorty.Maximum = Convert(tbxLiczba.Text).Length;
+                    pbSorty.Value = 1;
+                    pbSorty.Step = 1;
                     lbCzas.Text = "-";
                     Cursor.Current = Cursors.WaitCursor;
                     Stopwatch sw = new Stopwatch();
@@ -253,6 +283,11 @@ namespace AidsProjekt
                 if (isgenerated == false) MessageBox.Show("najpierw wygeneruj liste!");
                 else
                 {
+                    pbSorty.Visible = true;
+                    pbSorty.Minimum = 1;
+                    pbSorty.Maximum = GlobalList.Length;
+                    pbSorty.Value = 1;
+                    pbSorty.Step = 1;
                     lbCzas.Text = "-";
                     Cursor.Current = Cursors.WaitCursor;
                     Stopwatch sw = new Stopwatch();
@@ -267,6 +302,11 @@ namespace AidsProjekt
             {
                 try
                 {
+                    pbSorty.Visible = true;
+                    pbSorty.Minimum = 1;
+                    pbSorty.Maximum = Convert(tbxLiczba.Text).Length;
+                    pbSorty.Value = 1;
+                    pbSorty.Step = 1;
                     lbCzas.Text = "-";
                     Cursor.Current = Cursors.WaitCursor;
                     Stopwatch sw = new Stopwatch();
@@ -291,6 +331,11 @@ namespace AidsProjekt
                 if (isgenerated == false) MessageBox.Show("najpierw wygeneruj liste!");
                 else
                 {
+                    pbSorty.Visible = true;
+                    pbSorty.Minimum = 1;
+                    pbSorty.Maximum = GlobalList.Length;
+                    pbSorty.Value = 1;
+                    pbSorty.Step = 1;
                     lbCzas.Text = "-";
                     Cursor.Current = Cursors.WaitCursor;
                     Stopwatch sw = new Stopwatch();
@@ -305,6 +350,11 @@ namespace AidsProjekt
             {
                 try
                 {
+                    pbSorty.Visible = true;
+                    pbSorty.Minimum = 1;
+                    pbSorty.Maximum = Convert(tbxLiczba.Text).Length;
+                    pbSorty.Value = 1;
+                    pbSorty.Step = 1;
                     lbCzas.Text = "-";
                     Cursor.Current = Cursors.WaitCursor;
                     Stopwatch sw = new Stopwatch();
@@ -330,6 +380,11 @@ namespace AidsProjekt
                 if (isgenerated == false) MessageBox.Show("najpierw wygeneruj liste!");
                 else
                 {
+                    pbSorty.Visible = true;
+                    pbSorty.Minimum = 1;
+                    pbSorty.Maximum = GlobalList.Length;
+                    pbSorty.Value = 1;
+                    pbSorty.Step = 1;
                     lbCzas.Text = "-";
                     Cursor.Current = Cursors.WaitCursor;
                     Stopwatch sw = new Stopwatch();
@@ -344,6 +399,11 @@ namespace AidsProjekt
             {
                 try
                 {
+                    pbSorty.Visible = true;
+                    pbSorty.Minimum = 1;
+                    pbSorty.Maximum = Convert(tbxLiczba.Text).Length;
+                    pbSorty.Value = 1;
+                    pbSorty.Step = 1;
                     lbCzas.Text = "-";
                     Cursor.Current = Cursors.WaitCursor;
                     Stopwatch sw = new Stopwatch();

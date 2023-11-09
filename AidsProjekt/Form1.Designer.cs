@@ -49,6 +49,7 @@
             label3 = new Label();
             btCzyscListy = new Button();
             pbGeneracja = new ProgressBar();
+            pbSorty = new ProgressBar();
             ((System.ComponentModel.ISupportInitialize)nudDlugosc).BeginInit();
             SuspendLayout();
             // 
@@ -256,11 +257,19 @@
             pbGeneracja.Size = new Size(116, 14);
             pbGeneracja.TabIndex = 20;
             // 
+            // pbSorty
+            // 
+            pbSorty.Location = new Point(98, 394);
+            pbSorty.Name = "pbSorty";
+            pbSorty.Size = new Size(638, 23);
+            pbSorty.TabIndex = 21;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(pbSorty);
             Controls.Add(pbGeneracja);
             Controls.Add(btCzyscListy);
             Controls.Add(label3);
@@ -312,5 +321,6 @@
         private Label label3;
         private Button btCzyscListy;
         private ProgressBar pbGeneracja;
+        private ProgressBar pbSorty;
     }
 }
