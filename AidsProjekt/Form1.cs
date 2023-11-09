@@ -177,10 +177,12 @@ namespace AidsProjekt
                 else
                 {
                     lbCzas.Text = "-";
+                    Cursor.Current = Cursors.WaitCursor;
                     Stopwatch sw = new Stopwatch();
                     sw = Stopwatch.StartNew();
                     GlobalList = BubbleSort(GlobalList);
                     sw.Stop();
+                    Cursor.Current = Cursors.Default;
                     lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
                 }
             }
@@ -189,11 +191,13 @@ namespace AidsProjekt
                 try
                 {
                     lbCzas.Text = "-";
+                    Cursor.Current = Cursors.WaitCursor;
                     Stopwatch sw = new Stopwatch();
                     sw = Stopwatch.StartNew();
                     int[] SortedList = BubbleSort(Convert(tbxLiczba.Text));
                     sw.Stop();
                     tbxWynik.Text = ConvertIntToString(SortedList);
+                    Cursor.Current = Cursors.Default;
                     lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
                 }
                 catch (Exception ex)
@@ -212,10 +216,12 @@ namespace AidsProjekt
                 else
                 {
                     lbCzas.Text = "-";
+                    Cursor.Current = Cursors.WaitCursor;
                     Stopwatch sw = new Stopwatch();
                     sw = Stopwatch.StartNew();
                     GlobalList = SelectionSort(GlobalList);
                     sw.Stop();
+                    Cursor.Current = Cursors.Default;
                     lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
                 }
             }
@@ -224,10 +230,12 @@ namespace AidsProjekt
                 try
                 {
                     lbCzas.Text = "-";
+                    Cursor.Current = Cursors.WaitCursor;
                     Stopwatch sw = new Stopwatch();
                     sw = Stopwatch.StartNew();
                     int[] SortedList = SelectionSort(Convert(tbxLiczba.Text));
                     sw.Stop();
+                    Cursor.Current = Cursors.Default;
                     tbxWynik.Text = ConvertIntToString(SortedList);
                     lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
                 }
@@ -246,10 +254,12 @@ namespace AidsProjekt
                 else
                 {
                     lbCzas.Text = "-";
+                    Cursor.Current = Cursors.WaitCursor;
                     Stopwatch sw = new Stopwatch();
                     sw = Stopwatch.StartNew();
                     GlobalList = InsertionSort(GlobalList);
                     sw.Stop();
+                    Cursor.Current = Cursors.Default;
                     lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
                 }
             }
@@ -258,10 +268,12 @@ namespace AidsProjekt
                 try
                 {
                     lbCzas.Text = "-";
+                    Cursor.Current = Cursors.WaitCursor;
                     Stopwatch sw = new Stopwatch();
                     sw = Stopwatch.StartNew();
                     int[] SortedList = InsertionSort(Convert(tbxLiczba.Text));
                     sw.Stop();
+                    Cursor.Current = Cursors.Default;
                     tbxWynik.Text = ConvertIntToString(SortedList);
                     lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
                 }
@@ -280,10 +292,12 @@ namespace AidsProjekt
                 else
                 {
                     lbCzas.Text = "-";
+                    Cursor.Current = Cursors.WaitCursor;
                     Stopwatch sw = new Stopwatch();
                     sw = Stopwatch.StartNew();
                     GlobalList = MergeSort(GlobalList);
                     sw.Stop();
+                    Cursor.Current = Cursors.Default;
                     lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
                 }
             }
@@ -292,10 +306,12 @@ namespace AidsProjekt
                 try
                 {
                     lbCzas.Text = "-";
+                    Cursor.Current = Cursors.WaitCursor;
                     Stopwatch sw = new Stopwatch();
                     sw = Stopwatch.StartNew();
                     int[] SortedList = MergeSort(Convert(tbxLiczba.Text));
                     sw.Stop();
+                    Cursor.Current = Cursors.Default;
                     tbxWynik.Text = ConvertIntToString(SortedList);
                     lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
                 }
@@ -315,10 +331,12 @@ namespace AidsProjekt
                 else
                 {
                     lbCzas.Text = "-";
+                    Cursor.Current = Cursors.WaitCursor;
                     Stopwatch sw = new Stopwatch();
                     sw = Stopwatch.StartNew();
                     GlobalList = QuickSort(GlobalList, 0, GlobalList.Length - 1);
                     sw.Stop();
+                    Cursor.Current = Cursors.Default;
                     lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
                 }
             }
@@ -327,10 +345,12 @@ namespace AidsProjekt
                 try
                 {
                     lbCzas.Text = "-";
+                    Cursor.Current = Cursors.WaitCursor;
                     Stopwatch sw = new Stopwatch();
                     sw = Stopwatch.StartNew();
                     int[] SortedList = QuickSort(Convert(tbxLiczba.Text), 0, Convert(tbxLiczba.Text).Length - 1);
                     sw.Stop();
+                    Cursor.Current = Cursors.Default;
                     tbxWynik.Text = ConvertIntToString(SortedList);
                     lbCzas.Text = sw.Elapsed.TotalSeconds.ToString() + " sekund";
                 }
@@ -378,6 +398,7 @@ namespace AidsProjekt
             }
             else
             {
+                Cursor.Current = Cursors.WaitCursor;
                 GlobalList = new int[(int)nudDlugosc.Value];
 
                 Random rnd = new Random();
@@ -386,6 +407,7 @@ namespace AidsProjekt
                     GlobalList[i] = rnd.Next(0, 1001);
                 }
                 isgenerated = true;
+                Cursor.Current = Cursors.Default;
             }
 
         }
