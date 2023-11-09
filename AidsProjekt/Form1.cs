@@ -398,6 +398,11 @@ namespace AidsProjekt
             }
             else
             {
+                pbGeneracja.Visible = true;
+                pbGeneracja.Minimum = 1;
+                pbGeneracja.Maximum = (int)nudDlugosc.Value;
+                pbGeneracja.Value = 1;
+                pbGeneracja.Step = 1;
                 Cursor.Current = Cursors.WaitCursor;
                 GlobalList = new int[(int)nudDlugosc.Value];
 
@@ -405,6 +410,7 @@ namespace AidsProjekt
                 for (int i = 0; i < GlobalList.Length; i++)
                 {
                     GlobalList[i] = rnd.Next(0, 1001);
+                    pbGeneracja.PerformStep();
                 }
                 isgenerated = true;
                 Cursor.Current = Cursors.Default;
@@ -435,6 +441,7 @@ namespace AidsProjekt
         {
             GlobalList = new int[0];
             isgenerated = false;
+            pbGeneracja.Value = 1;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -447,5 +454,6 @@ namespace AidsProjekt
             tbxLiczba.Clear();
             tbxWynik.Clear();
         }
+
     }
 }

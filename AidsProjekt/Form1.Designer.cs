@@ -48,6 +48,7 @@
             label2 = new Label();
             label3 = new Label();
             btCzyscListy = new Button();
+            pbGeneracja = new ProgressBar();
             ((System.ComponentModel.ISupportInitialize)nudDlugosc).BeginInit();
             SuspendLayout();
             // 
@@ -124,9 +125,9 @@
             chbPrzelacz.AutoSize = true;
             chbPrzelacz.Location = new Point(329, 86);
             chbPrzelacz.Name = "chbPrzelacz";
-            chbPrzelacz.Size = new Size(148, 19);
+            chbPrzelacz.Size = new Size(141, 19);
             chbPrzelacz.TabIndex = 7;
-            chbPrzelacz.Text = "Aktualnie wybrana lista";
+            chbPrzelacz.Text = "Zmiana wybranej listy";
             chbPrzelacz.UseVisualStyleBackColor = true;
             chbPrzelacz.CheckedChanged += chbPrzelacz_CheckedChanged;
             // 
@@ -140,7 +141,7 @@
             // 
             // btGen
             // 
-            btGen.Location = new Point(571, 143);
+            btGen.Location = new Point(571, 129);
             btGen.Name = "btGen";
             btGen.Size = new Size(116, 43);
             btGen.TabIndex = 9;
@@ -248,11 +249,19 @@
             btCzyscListy.UseVisualStyleBackColor = true;
             btCzyscListy.Click += btCzyscListy_Click;
             // 
+            // pbGeneracja
+            // 
+            pbGeneracja.Location = new Point(571, 178);
+            pbGeneracja.Name = "pbGeneracja";
+            pbGeneracja.Size = new Size(116, 14);
+            pbGeneracja.TabIndex = 20;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(pbGeneracja);
             Controls.Add(btCzyscListy);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -302,5 +311,6 @@
         private Label label2;
         private Label label3;
         private Button btCzyscListy;
+        private ProgressBar pbGeneracja;
     }
 }
