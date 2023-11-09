@@ -140,7 +140,7 @@
             // 
             // btGen
             // 
-            btGen.Location = new Point(560, 115);
+            btGen.Location = new Point(571, 143);
             btGen.Name = "btGen";
             btGen.Size = new Size(116, 43);
             btGen.TabIndex = 9;
@@ -171,6 +171,7 @@
             // 
             lbNapisLewa.AutoSize = true;
             lbNapisLewa.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            lbNapisLewa.ForeColor = Color.Lime;
             lbNapisLewa.Location = new Point(130, 9);
             lbNapisLewa.Name = "lbNapisLewa";
             lbNapisLewa.Size = new Size(71, 32);
@@ -182,7 +183,7 @@
             // 
             lbNapisPrawa.AutoSize = true;
             lbNapisPrawa.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lbNapisPrawa.ForeColor = SystemColors.AppWorkspace;
+            lbNapisPrawa.ForeColor = Color.Red;
             lbNapisPrawa.Location = new Point(592, 9);
             lbNapisPrawa.Name = "lbNapisPrawa";
             lbNapisPrawa.Size = new Size(84, 32);
@@ -191,7 +192,7 @@
             // 
             // btWyswietl
             // 
-            btWyswietl.Location = new Point(538, 183);
+            btWyswietl.Location = new Point(538, 211);
             btWyswietl.Name = "btWyswietl";
             btWyswietl.Size = new Size(95, 58);
             btWyswietl.TabIndex = 14;
@@ -201,7 +202,7 @@
             // 
             // btWyczysc
             // 
-            btWyczysc.Location = new Point(639, 183);
+            btWyczysc.Location = new Point(641, 211);
             btWyczysc.Name = "btWyczysc";
             btWyczysc.Size = new Size(95, 58);
             btWyczysc.TabIndex = 15;

@@ -376,13 +376,13 @@ namespace AidsProjekt
         {
             if (chbPrzelacz.Checked)
             {
-                lbNapisPrawa.ForeColor = Color.Black;
-                lbNapisLewa.ForeColor = Color.Gray;
+                lbNapisPrawa.ForeColor = Color.Lime;
+                lbNapisLewa.ForeColor = Color.Red;
             }
             else
             {
-                lbNapisLewa.ForeColor = Color.Black;
-                lbNapisPrawa.ForeColor = Color.Gray;
+                lbNapisLewa.ForeColor = Color.Lime;
+                lbNapisPrawa.ForeColor = Color.Red;
             }
         }
         //Generowanie Listy
