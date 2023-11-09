@@ -86,7 +86,7 @@ namespace AidsProjekt
                 j = i - 1;
                 while (j >= 0 && tab[j] > temp)
                 {
-                    tab[j + 1] = tab[j];
+                    tab[j + 1]   = tab[j];    
                     --j;
                 }
                 tab[j + 1] = temp;
