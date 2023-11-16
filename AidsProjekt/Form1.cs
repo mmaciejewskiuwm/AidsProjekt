@@ -185,7 +185,8 @@ namespace AidsProjekt
         {
             if (chbPrzelacz.Checked)
             {
-                if (isgenerated == false) MessageBox.Show("najpierw wygeneruj liste!");
+                if (isgenerated == false && launguage==1 ) MessageBox.Show("najpierw wygeneruj liste!");
+                else if (isgenerated == false && launguage!=1 ) MessageBox.Show("firstly you have to generate list!");
                 else
                 {
                     lbCzas.Text = "-";
@@ -224,7 +225,9 @@ namespace AidsProjekt
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("z造 format liczby musza byc oddzielone spacja");
+                    if (launguage == 1)
+                        MessageBox.Show("z造 format liczby musza byc oddzielone spacja");
+                    else MessageBox.Show("Wrong format numbers have to be separated with a spacebar");
                 }
             }
 
@@ -234,7 +237,8 @@ namespace AidsProjekt
         {
             if (chbPrzelacz.Checked)
             {
-                if (isgenerated == false) MessageBox.Show("najpierw wygeneruj liste!");
+                if (isgenerated == false && launguage == 1) MessageBox.Show("najpierw wygeneruj liste!");
+                else if (isgenerated == false && launguage != 1) MessageBox.Show("firstly you have to generate list!");
                 else
                 {
                     pbSorty.Visible = true;
@@ -273,7 +277,9 @@ namespace AidsProjekt
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("z造 format liczby musza byc oddzielone spacja");
+                    if (launguage == 1)
+                        MessageBox.Show("z造 format liczby musza byc oddzielone spacja");
+                    else MessageBox.Show("Wrong format numbers have to be separated with a spacebar");
                 }
             }
         }
@@ -282,7 +288,8 @@ namespace AidsProjekt
         {
             if (chbPrzelacz.Checked)
             {
-                if (isgenerated == false) MessageBox.Show("najpierw wygeneruj liste!");
+                if (isgenerated == false && launguage == 1) MessageBox.Show("najpierw wygeneruj liste!");
+                else if (isgenerated == false && launguage != 1) MessageBox.Show("firstly you have to generate list!");
                 else
                 {
                     pbSorty.Visible = true;
@@ -321,7 +328,9 @@ namespace AidsProjekt
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("z造 format liczby musza byc oddzielone spacja");
+                    if (launguage == 1)
+                        MessageBox.Show("z造 format liczby musza byc oddzielone spacja");
+                    else MessageBox.Show("Wrong format numbers have to be separated with a spacebar");
                 }
             }
         }
@@ -330,7 +339,8 @@ namespace AidsProjekt
         {
             if (chbPrzelacz.Checked)
             {
-                if (isgenerated == false) MessageBox.Show("najpierw wygeneruj liste!");
+                if (isgenerated == false && launguage == 1) MessageBox.Show("najpierw wygeneruj liste!");
+                else if (isgenerated == false && launguage != 1) MessageBox.Show("firstly you have to generate list!");
                 else
                 {
                     pbSorty.Visible = true;
@@ -369,7 +379,9 @@ namespace AidsProjekt
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("z造 format liczby musza byc oddzielone spacja");
+                    if (launguage == 1)
+                        MessageBox.Show("z造 format liczby musza byc oddzielone spacja");
+                    else MessageBox.Show("Wrong format numbers have to be separated with a spacebar");
                 }
             }
 
@@ -379,7 +391,8 @@ namespace AidsProjekt
         {
             if (chbPrzelacz.Checked)
             {
-                if (isgenerated == false) MessageBox.Show("najpierw wygeneruj liste!");
+                if (isgenerated == false && launguage == 1) MessageBox.Show("najpierw wygeneruj liste!");
+                else if (isgenerated == false && launguage != 1) MessageBox.Show("firstly you have to generate list!");
                 else
                 {
                     pbSorty.Visible = true;
@@ -418,7 +431,9 @@ namespace AidsProjekt
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("z造 format liczby musza byc oddzielone spacja");
+                    if(launguage == 1)
+                        MessageBox.Show("z造 format liczby musza byc oddzielone spacja");
+                    else MessageBox.Show("Wrong format numbers have to be separated with a spacebar");
                 }
             }
         }
@@ -450,13 +465,13 @@ namespace AidsProjekt
         //Generowanie Listy
         private void btGen_Click(object sender, EventArgs e)
         {
-            if ((int)nudDlugosc.Value == 0)
+            if ((int)nudDlugosc.Value == 0 && launguage == 1)
             {
                 MessageBox.Show("Lista musi byc dluzsza niz 0");
             }
-            else if ((int)nudDlugosc.Value > 2000000)
+            else if ((int)nudDlugosc.Value == 0 && launguage != 1)
             {
-                MessageBox.Show("Lista ma byc krotsza niz 2mln");
+                MessageBox.Show("List has to be longer than 0");
             }
             else
             {
@@ -541,7 +556,7 @@ namespace AidsProjekt
                 lbNapis.Text = "Execution time: ";
                 launguage = 2;
             }
-            if (launguage == 2)
+            else
             {
                 btJezyk.Text = "Change launguage";
                 lbNapisLewa.Text = "Lewa";
