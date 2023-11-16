@@ -50,6 +50,7 @@
             btCzyscListy = new Button();
             pbGeneracja = new ProgressBar();
             pbSorty = new ProgressBar();
+            btJezyk = new Button();
             ((System.ComponentModel.ISupportInitialize)nudDlugosc).BeginInit();
             SuspendLayout();
             // 
@@ -234,7 +235,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(521, 68);
+            label3.Location = new Point(538, 68);
             label3.Name = "label3";
             label3.Size = new Size(215, 15);
             label3.TabIndex = 18;
@@ -264,11 +265,22 @@
             pbSorty.Size = new Size(638, 23);
             pbSorty.TabIndex = 21;
             // 
+            // btJezyk
+            // 
+            btJezyk.Location = new Point(312, 0);
+            btJezyk.Name = "btJezyk";
+            btJezyk.Size = new Size(171, 23);
+            btJezyk.TabIndex = 22;
+            btJezyk.Text = "Change launguage";
+            btJezyk.UseVisualStyleBackColor = true;
+            btJezyk.Click += btJezyk_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btJezyk);
             Controls.Add(pbSorty);
             Controls.Add(pbGeneracja);
             Controls.Add(btCzyscListy);
@@ -322,5 +334,6 @@
         private Button btCzyscListy;
         private ProgressBar pbGeneracja;
         private ProgressBar pbSorty;
+        private Button btJezyk;
     }
 }

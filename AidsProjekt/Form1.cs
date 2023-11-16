@@ -8,6 +8,7 @@ namespace AidsProjekt
     {
         int[] GlobalList = new int[0];
         bool isgenerated = false;
+        int launguage = 1;
 
         public Form1()
         {
@@ -73,7 +74,7 @@ namespace AidsProjekt
                         tab[k] = temp;
                     }
                 }
-             pbSorty.PerformStep();
+                pbSorty.PerformStep();
             }
             return tab;
         }
@@ -86,7 +87,7 @@ namespace AidsProjekt
                 j = i - 1;
                 while (j >= 0 && tab[j] > temp)
                 {
-                    tab[j + 1]   = tab[j];    
+                    tab[j + 1] = tab[j];
                     --j;
                 }
                 tab[j + 1] = temp;
@@ -160,7 +161,7 @@ namespace AidsProjekt
         }
         int[] QuickSort(int[] tablica, int lewyIndeks, int prawyIndeks)
         {
-            if(pbSorty.Value != pbSorty.Maximum - 1)
+            if (pbSorty.Value != pbSorty.Maximum - 1)
                 pbSorty.PerformStep();
             if (lewyIndeks < prawyIndeks)
             {
@@ -506,7 +507,7 @@ namespace AidsProjekt
             GlobalList = new int[0];
             isgenerated = false;
             pbGeneracja.Value = 1;
-            if(chbPrzelacz.Checked)
+            if (chbPrzelacz.Checked)
                 pbSorty.Value = 1;
         }
 
@@ -522,5 +523,41 @@ namespace AidsProjekt
             pbSorty.Value = 1;
         }
 
+        private void btJezyk_Click(object sender, EventArgs e)
+        {
+            if (launguage == 1)
+            {
+                btJezyk.Text = "Zmien jezyk";
+                lbNapisLewa.Text = "Left";
+                lbNapisPrawa.Text = "Right";
+                label1.Text = "Your list: ";
+                label2.Text = "Sorting outcome: ";
+                btCzyscListy.Text = "Clear list fields";
+                label3.Text = "Input list lenght:";
+                btGen.Text = "Generate!";
+                btWyswietl.Text = "Show generated list";
+                btWyczysc.Text = "Clear generated list";
+                chbPrzelacz.Text = "Change selected list";
+                lbNapis.Text = "Execution time: ";
+                launguage = 2;
+            }
+            if (launguage == 2)
+            {
+                btJezyk.Text = "Change launguage";
+                lbNapisLewa.Text = "Lewa";
+                lbNapisPrawa.Text = "Prawa";
+                label1.Text = "Twoja lista: ";
+                label2.Text = "Wynik sortowania: ";
+                btCzyscListy.Text = "Wyczysc pola z listami";
+                label3.Text = "Podaj dlugosc listy do wygenerowania:";
+                btGen.Text = "Generuj!";
+                btWyswietl.Text = "Wyswietl wygenerowana liste";
+                btWyczysc.Text = "Wyczysc wygenerowana liste";
+                chbPrzelacz.Text = "Zmiana wybranej listy";
+                lbNapis.Text = "Czas wykonania: ";
+                launguage = 1;
+            }
+
+        }
     }
 }
